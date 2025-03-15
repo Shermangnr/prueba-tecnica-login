@@ -1,3 +1,4 @@
+/* Estilos generales del body para centrar el contenido vertical y horizontalmente y aplicar una imagen de fondo con un efecto de degradado. */
 body {
     display: flex;
     flex-direction: column;
@@ -11,6 +12,7 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
 }
 
+/* Contenedor principal que agrupa el formulario de inicio de sesión */
 .cont-principal {   
     background: #f4f4f4;
     padding: 20px;
@@ -21,6 +23,7 @@ body {
     justify-content: center;
 }
 
+/* Espaciado para el título */
 h2 {
     margin-bottom: 20px;        
 }
@@ -34,24 +37,24 @@ h2 {
     border-radius: 50%;    
 }
 
-.correo {
+/* Espaciado superior para los campos de entrada */
+.correo, .contrasena {
     margin-top: 20px;
 }
 
-.contrasena {
-    margin-top: 20px;
-}
-
+/* Espaciado para el botón de ingreso */
 .ingresar {
     margin-top: 20px;
     margin-bottom: 15px;
 }
 
+/* Estilos para los mensajes de error */
 .mensaje-error {
     color: red;
     margin-top: 15px;
 }
 
+/* Contenedor de la barra de progreso */
 #progress-bar-container {
     width: 100%;
     background: #ddd;
@@ -59,6 +62,7 @@ h2 {
     margin-top: 10px;
 }
 
+/* Barra de progreso animada */
 #progress-bar {
     height: 5px;
     width: 0%;
@@ -67,16 +71,52 @@ h2 {
     transition: width 1s ease-in-out;
 }
 
-#loading-message {
-    font-size: 14px;
-    margin-top: 5px;
-    color: black;
+/* Estilos para el pie de página */
+footer {
+    text-align: center;
+    padding: 10px;
+    color: white;
+    width: 100%;
 }
 
-footer {
-   text-align: center;
-   padding: 10px;
-   color: white;
-   width: 100%;
-   
+/* Media Queries para hacer el diseño responsivo */
+
+/* Para dispositivos pequeños (teléfonos en modo vertical, menos de 600px) */
+@media only screen and (max-width: 600px) {
+    .cont-principal {
+        width: 90%; /* Ocupar casi toda la pantalla */
+        padding: 15px; /* Reducir el padding */
+    }
+
+    .logo {
+        width: 80px; /* Reducir el tamaño del logo */
+    }
+}
+
+/* Para pantallas medianas (teléfonos en modo horizontal y tabletas pequeñas) */
+@media only screen and (min-width: 600px) {
+    .cont-principal {
+        width: 75%; /* Ajustar el ancho */
+    }
+}
+
+/* Para tabletas y dispositivos medianos (min-width: 768px) */
+@media only screen and (min-width: 768px) {
+    .cont-principal {
+        width: 50%;
+    }
+}
+
+/* Para laptops y pantallas grandes (min-width: 992px) */
+@media only screen and (min-width: 992px) {
+    .cont-principal {
+        width: 35%;
+    }
+}
+
+/* Para pantallas muy grandes (min-width: 1200px) */
+@media only screen and (min-width: 1200px) {
+    .cont-principal {
+        width: 25%;
+    }
 }
