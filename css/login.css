@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #eeeded;
+    background: linear-gradient(rgba(99, 99, 99, 0.575), rgba(99, 99, 99, 0.568)), url(https://images.pexels.com/photos/1419923/pexels-photo-1419923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
+}
+
+.cont-principal {    
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 30%;
+}
+
+h2 {
+    margin-bottom: 20px;        
+}
+
+/* Dimensiones de la imagen del logo */
+.logo {
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 5px solid rgba(12, 54, 170, 0.575);
+    border-radius: 50%;    
+}
+
+.correo {
+    margin-top: 20px;
+}
+
+.contrasena {
+    margin-top: 20px;
+}
+
+.ingresar {
+    margin-top: 20px;
+}
+
+.mensaje-error {
+    color: red;
+    margin-top: 15px;
+}
+
+#progress-bar-container {
+    width: 100%;
+    background: #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#progress-bar {
+    height: 5px;
+    width: 0%;
+    background: #0d6dfb;
+    border-radius: 5px;
+    transition: width 1s ease-in-out;
+}
+
+#loading-message {
+    font-size: 14px;
+    margin-top: 5px;
+    color: black;
+}
+
