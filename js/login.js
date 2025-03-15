@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    //Declaracion de variables que se obtienen por ID de los elementos
+    /*
+    Declaración de variables
+    Obtener elementos del DOM por ID
+    */
     const loginContainer = document.getElementById("cont-login");
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
@@ -10,7 +13,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnText = document.getElementById("btn-text");
     
     /*
-    Condicional para cuando el usuario ingrese sus datos y aparezca mensaje de bienvenida
+    Inicialización de Tooltips con Bootstrap
+    */
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+    
+    /*
+    Función para ocultar el tooltip cuando el usuario escribe en el input
+    */
+    function hideTooltipOnInput(event) {
+        const tooltipInstance = bootstrap.Tooltip.getInstance(event.target);
+        if (tooltipInstance) {
+            tooltipInstance.hide();
+            }
+    }
+            
+    emailInput.addEventListener("input", hideTooltipOnInput);
+    passwordInput.addEventListener("input", hideTooltipOnInput);
+
+    /*
+    Condicional para comprobar si el usuario ya ha iniciado sesión previamente
     */
     if (localStorage.getItem("user")) {
         loginContainer.innerHTML = `<h4>Bienvenido, ${localStorage.getItem("user")}!</h4><button id='logout-btn' class='btn btn-primary' style='margin-top: 15px;'>Cerrar Sesión</button>`;
@@ -21,12 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
     
+    // Evento para cuando el usuario haga click sobre el boton de ingreso (Iniciar sesión)
     loginBtn.addEventListener("click", () => {
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
         
         /*
-        Condicional para verificar que el usuario ingrese una direccion de correo electronico
+        Condicional para verificar que el usuario ingrese una direccion de correo electrónico
         Si no se cumple aparece mensaje de error
         */
         if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
